@@ -66,21 +66,21 @@ export default function FeaturedProducts() {
   };
 
   return (
-    <section className="max-w-7xl mx-auto py-20 px-6 relative">
+    <section className="max-w-7xl mx-auto py-12 md:py-20 px-4 md:px-6 relative">
       {/* Section Title with Animation */}
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}
         viewport={{ once: true }}
-        className="mb-16"
+        className="mb-8 md:mb-16"
       >
         <motion.h2
           variants={titleVariants}
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}
-          className="text-4xl md:text-5xl font-bold text-white mb-4"
+          className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-2 md:mb-4"
         >
           Featured{" "}
           <motion.span
@@ -101,7 +101,7 @@ export default function FeaturedProducts() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.2 }}
           viewport={{ once: true }}
-          className="text-gray-400 text-lg"
+          className="text-gray-400 text-sm md:text-base"
         >
           Explore our handpicked selection of premium products
         </motion.p>
@@ -109,7 +109,7 @@ export default function FeaturedProducts() {
 
       {/* Animated Grid */}
       <motion.div
-        className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+        className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 lg:gap-8"
         variants={containerVariants}
         initial="hidden"
         whileInView="visible"
@@ -130,7 +130,7 @@ export default function FeaturedProducts() {
 
       {/* View All Button */}
       <motion.div
-        className="flex justify-center mt-16"
+        className="flex justify-center mt-10 md:mt-16"
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6, delay: 0.5 }}
@@ -142,7 +142,7 @@ export default function FeaturedProducts() {
             boxShadow: "0 20px 40px rgba(59, 130, 246, 0.3)",
           }}
           whileTap={{ scale: 0.95 }}
-          className="px-12 py-4 bg-gradient-to-r from-blue-600 to-blue-500 rounded-xl font-semibold text-white hover:shadow-lg transition-shadow"
+          className="px-6 md:px-12 py-3 md:py-4 bg-gradient-to-r from-blue-600 to-blue-500 rounded-xl font-semibold text-sm md:text-base text-white hover:shadow-lg transition-shadow"
         >
           View All Products
         </motion.button>

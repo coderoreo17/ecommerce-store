@@ -40,7 +40,7 @@ export default function Navbar() {
       transition={{ duration: 0.6 }}
       className="sticky top-0 z-50 bg-black/70 backdrop-blur-xl border-b border-gray-800"
     >
-      <div className="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+      <div className="max-w-7xl mx-auto px-4 md:px-6 py-3 md:py-4 flex justify-between items-center">
         {/* Logo */}
         <motion.div
           whileHover={{ scale: 1.05 }}
@@ -48,7 +48,7 @@ export default function Navbar() {
         >
           <Link
             href="/"
-            className="text-2xl font-bold bg-gradient-to-r from-blue-500 to-cyan-500 bg-clip-text text-transparent hover:from-blue-400 hover:to-cyan-400 transition-all"
+            className="text-lg md:text-2xl font-bold bg-gradient-to-r from-blue-500 to-cyan-500 bg-clip-text text-transparent hover:from-blue-400 hover:to-cyan-400 transition-all"
           >
             TechStore
           </Link>
@@ -56,7 +56,7 @@ export default function Navbar() {
 
         {/* Navigation Links */}
         <motion.div
-          className="flex gap-8 text-gray-300"
+          className="hidden md:flex gap-4 lg:gap-8 text-sm lg:text-base text-gray-300"
           variants={containerVariants}
           initial="hidden"
           animate="visible"

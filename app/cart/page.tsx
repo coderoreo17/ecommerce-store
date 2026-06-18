@@ -78,25 +78,25 @@ export default function CartPage() {
       <motion.section
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
-        className="py-12 bg-gradient-to-b from-gray-900 to-black border-b border-gray-800"
+        className="py-8 md:py-12 bg-gradient-to-b from-gray-900 to-black border-b border-gray-800"
       >
-        <div className="max-w-7xl mx-auto px-6">
+        <div className="max-w-7xl mx-auto px-4 md:px-6">
           <motion.h1
-            className="text-4xl font-bold text-white flex items-center gap-3"
+            className="text-2xl md:text-3xl lg:text-4xl font-bold text-white flex items-center gap-2 md:gap-3"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2 }}
           >
-            <ShoppingCart size={36} className="text-blue-500" />
+            <ShoppingCart size={24} className="md:w-9 md:h-9 text-blue-500" />
             Shopping Cart
           </motion.h1>
         </div>
       </motion.section>
 
       {/* Main Content */}
-      <section className="max-w-7xl mx-auto px-6 py-12">
+      <section className="max-w-7xl mx-auto px-4 md:px-6 py-8 md:py-12">
         {cartItems.length > 0 ? (
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 md:gap-8">
             {/* Cart Items */}
             <div className="lg:col-span-2">
               <motion.div
@@ -111,14 +111,14 @@ export default function CartPage() {
                     initial={{ opacity: 0, x: -20 }}
                     animate={{ opacity: 1, x: 0 }}
                     exit={{ opacity: 0, x: 20 }}
-                    className="glass rounded-xl p-6 border border-gray-700 hover:border-blue-500/50 transition-colors"
+                    className="glass rounded-xl p-4 md:p-6 border border-gray-700 hover:border-blue-500/50 transition-colors"
                   >
-                    <div className="flex gap-6">
+                    <div className="flex gap-3 md:gap-6 flex-col sm:flex-row">
                       {/* Image */}
                       <motion.img
                         src={item.image}
                         alt={item.title}
-                        className="w-24 h-24 object-cover rounded-lg"
+                        className="w-20 h-20 md:w-24 md:h-24 object-cover rounded-lg"
                         whileHover={{ scale: 1.05 }}
                       />
 
