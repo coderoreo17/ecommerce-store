@@ -34,12 +34,17 @@ export default function CartPage() {
 
   const updateQuantity = (id: number, delta: number) => {
     setCartItems(
-      cartItems.map((item) =>
-        item.id === id
-          ? { ...item, quantity: Math.max(0, item.quantity + delta) }
-          : item
-      )
-    ).filter((item) => item.quantity > 0);
+      cartItems
+        .map((item) =>
+          item.id === id
+            ? {
+                ...item,
+                quantity: Math.max(0, item.quantity + delta),
+              }
+            : item,
+        )
+        .filter((item) => item.quantity > 0),
+    );
   };
 
   const removeItem = (id: number) => {
@@ -48,7 +53,7 @@ export default function CartPage() {
 
   const subtotal = cartItems.reduce(
     (sum, item) => sum + item.price * item.quantity,
-    0
+    0,
   );
   const shipping = subtotal > 0 ? 299 : 0;
   const tax = Math.round(subtotal * 0.18);
@@ -157,8 +162,7 @@ export default function CartPage() {
                       {/* Price and Delete */}
                       <div className="text-right flex flex-col justify-between items-end">
                         <p className="text-xl font-bold text-white">
-                          ₹
-                          {(item.price * item.quantity).toLocaleString()}
+                          ₹{(item.price * item.quantity).toLocaleString()}
                         </p>
                         <motion.button
                           whileHover={{ scale: 1.1 }}
