@@ -1,6 +1,6 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { motion, Variants } from "framer-motion";
 import { ChevronRight } from "lucide-react";
 
 export default function Hero() {
@@ -15,22 +15,26 @@ export default function Hero() {
     },
   };
 
-  const itemVariants = {
-    hidden: { opacity: 0, y: 20 },
+  const itemVariants: Variants = {
+    hidden: {
+      opacity: 0,
+      y: 20,
+    },
     visible: {
       opacity: 1,
       y: 0,
-      transition: { duration: 0.8, ease: "easeOut" },
+      transition: {
+        duration: 0.8,
+      },
     },
   };
 
-  const floatingVariants = {
+  const floatingVariants: Variants = {
     animate: {
       y: [0, -20, 0],
       transition: {
         duration: 4,
         repeat: Infinity,
-        ease: "easeInOut",
       },
     },
   };
@@ -47,7 +51,6 @@ export default function Hero() {
         transition={{
           duration: 8,
           repeat: Infinity,
-          ease: "easeInOut",
         }}
       />
       <motion.div
@@ -59,7 +62,6 @@ export default function Hero() {
         transition={{
           duration: 8,
           repeat: Infinity,
-          ease: "easeInOut",
         }}
       />
 
@@ -74,7 +76,11 @@ export default function Hero() {
           <motion.h1
             className="text-6xl md:text-7xl font-bold text-white mb-4"
             animate={{ backgroundPosition: ["0%", "100%"] }}
-            transition={{ duration: 3, repeat: Infinity, repeatType: "reverse" }}
+            transition={{
+              duration: 3,
+              repeat: Infinity,
+              repeatType: "reverse",
+            }}
           >
             Discover Premium
             <motion.span
@@ -93,7 +99,8 @@ export default function Hero() {
           className="text-gray-300 text-xl md:text-2xl mb-8 max-w-2xl mx-auto leading-relaxed"
         >
           Upgrade your lifestyle with our curated collection of cutting-edge
-          technology and premium products. Experience shopping like never before.
+          technology and premium products. Experience shopping like never
+          before.
         </motion.p>
 
         {/* CTA Buttons */}
@@ -141,7 +148,11 @@ export default function Hero() {
               <motion.div
                 className="w-16 h-16 bg-blue-500/10 rounded-full flex items-center justify-center mb-3 border border-blue-500/20"
                 animate={{
-                  borderColor: ["rgba(59, 130, 246, 0.2)", "rgba(59, 130, 246, 0.5)", "rgba(59, 130, 246, 0.2)"],
+                  borderColor: [
+                    "rgba(59, 130, 246, 0.2)",
+                    "rgba(59, 130, 246, 0.5)",
+                    "rgba(59, 130, 246, 0.2)",
+                  ],
                 }}
                 transition={{ duration: 2, repeat: Infinity }}
               >
