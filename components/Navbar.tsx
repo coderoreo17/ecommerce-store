@@ -40,7 +40,7 @@ export default function Navbar() {
       transition={{ duration: 0.6 }}
       className="sticky top-0 z-50 bg-black/70 backdrop-blur-xl border-b border-gray-800"
     >
-      <div className="max-w-7xl mx-auto px-4 md:px-6 py-3 md:py-4 flex justify-between items-center">
+      <div className="max-w-7xl mx-auto px-4 md:px-6 py-2 md:py-4 flex justify-between items-center">
         {/* Logo */}
         <motion.div
           whileHover={{ scale: 1.05 }}
@@ -48,13 +48,13 @@ export default function Navbar() {
         >
           <Link
             href="/"
-            className="text-lg md:text-2xl font-bold bg-gradient-to-r from-blue-500 to-cyan-500 bg-clip-text text-transparent hover:from-blue-400 hover:to-cyan-400 transition-all"
+            className="text-base md:text-lg lg:text-2xl font-bold bg-gradient-to-r from-blue-500 to-cyan-500 bg-clip-text text-transparent hover:from-blue-400 hover:to-cyan-400 transition-all"
           >
             TechStore
           </Link>
         </motion.div>
 
-        {/* Navigation Links */}
+        {/* Navigation Links - Hidden on mobile */}
         <motion.div
           className="hidden md:flex gap-4 lg:gap-8 text-sm lg:text-base text-gray-300"
           variants={containerVariants}
@@ -77,10 +77,11 @@ export default function Navbar() {
           ))}
         </motion.div>
 
-        {/* Cart Icon */}
+        {/* Cart Icon - Hidden on mobile */}
         <motion.div
           whileHover={{ scale: 1.1 }}
           whileTap={{ scale: 0.9 }}
+          className="hidden md:block"
         >
           <Link href="/cart" className="relative group">
             <ShoppingCart className="text-white hover:text-blue-400 transition-colors" />

@@ -51,10 +51,10 @@ export default function Footer() {
         viewport={{ once: true }}
       />
 
-      <div className="max-w-7xl mx-auto px-6 py-16 relative z-10">
+      <div className="max-w-7xl mx-auto px-4 md:px-6 py-12 md:py-16 relative z-10">
         {/* Main footer content */}
         <motion.div
-          className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12"
+          className="grid grid-cols-1 md:grid-cols-4 gap-8 md:gap-12 mb-8 md:mb-12"
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
@@ -63,19 +63,19 @@ export default function Footer() {
           {/* Brand */}
           <motion.div variants={itemVariants}>
             <motion.h3
-              className="text-2xl font-bold bg-gradient-to-r from-blue-500 to-cyan-500 bg-clip-text text-transparent mb-4"
+              className="text-xl md:text-2xl font-bold bg-gradient-to-r from-blue-500 to-cyan-500 bg-clip-text text-transparent mb-4"
               whileHover={{ scale: 1.05 }}
             >
               TechStore
             </motion.h3>
-            <p className="text-gray-400 text-sm leading-relaxed">
+            <p className="text-gray-400 text-xs md:text-sm leading-relaxed">
               Premium tech products with exceptional quality and service.
             </p>
           </motion.div>
 
           {/* Quick Links */}
           <motion.div variants={itemVariants}>
-            <h4 className="text-white font-semibold mb-4">Quick Links</h4>
+            <h4 className="text-sm md:text-base font-semibold text-white mb-4">Quick Links</h4>
             <ul className="space-y-2">
               {["Home", "Shop", "About", "Contact"].map((link) => (
                 <motion.li
@@ -83,7 +83,7 @@ export default function Footer() {
                   whileHover={{ x: 5 }}
                   transition={{ type: "spring", stiffness: 300 }}
                 >
-                  <a href="#" className="text-gray-400 hover:text-blue-400 transition-colors text-sm">
+                  <a href="#" className="text-gray-400 hover:text-blue-400 transition-colors text-xs md:text-sm">
                     {link}
                   </a>
                 </motion.li>
@@ -93,7 +93,7 @@ export default function Footer() {
 
           {/* Support */}
           <motion.div variants={itemVariants}>
-            <h4 className="text-white font-semibold mb-4">Support</h4>
+            <h4 className="text-sm md:text-base font-semibold text-white mb-4">Support</h4>
             <ul className="space-y-2">
               {["FAQ", "Documentation", "Community", "Status"].map((link) => (
                 <motion.li
@@ -101,7 +101,7 @@ export default function Footer() {
                   whileHover={{ x: 5 }}
                   transition={{ type: "spring", stiffness: 300 }}
                 >
-                  <a href="#" className="text-gray-400 hover:text-blue-400 transition-colors text-sm">
+                  <a href="#" className="text-gray-400 hover:text-blue-400 transition-colors text-xs md:text-sm">
                     {link}
                   </a>
                 </motion.li>
@@ -111,24 +111,24 @@ export default function Footer() {
 
           {/* Newsletter */}
           <motion.div variants={itemVariants}>
-            <h4 className="text-white font-semibold mb-4">Newsletter</h4>
-            <p className="text-gray-400 text-sm mb-4">
+            <h4 className="text-sm md:text-base font-semibold text-white mb-4">Newsletter</h4>
+            <p className="text-gray-400 text-xs md:text-sm mb-4">
               Subscribe to get special offers and updates.
             </p>
             <motion.form
-              className="flex"
+              className="flex flex-col sm:flex-row"
               onSubmit={(e) => e.preventDefault()}
             >
               <input
                 type="email"
                 placeholder="Your email"
-                className="flex-1 px-4 py-2 bg-gray-900/50 border border-gray-800 rounded-l-lg text-gray-300 placeholder-gray-600 focus:outline-none focus:border-blue-500 transition-colors text-sm"
+                className="flex-1 px-4 py-2 bg-gray-900/50 border border-gray-800 rounded-lg sm:rounded-l-lg text-gray-300 placeholder-gray-600 focus:outline-none focus:border-blue-500 transition-colors text-sm mb-2 sm:mb-0"
               />
               <motion.button
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 type="submit"
-                className="px-4 py-2 bg-gradient-to-r from-blue-600 to-blue-500 rounded-r-lg text-white font-semibold hover:shadow-lg transition-shadow"
+                className="px-4 py-2 bg-gradient-to-r from-blue-600 to-blue-500 rounded-lg sm:rounded-r-lg text-white font-semibold hover:shadow-lg transition-shadow text-sm"
               >
                 Subscribe
               </motion.button>
@@ -138,14 +138,14 @@ export default function Footer() {
 
         {/* Divider */}
         <motion.div
-          className="h-px bg-gradient-to-r from-transparent via-blue-500 to-transparent my-8"
+          className="h-px bg-gradient-to-r from-transparent via-blue-500 to-transparent my-6 md:my-8"
           animate={{ opacity: [0.5, 1, 0.5] }}
           transition={{ duration: 3, repeat: Infinity }}
         />
 
         {/* Bottom footer */}
         <motion.div
-          className="flex flex-col md:flex-row justify-between items-center gap-8"
+          className="flex flex-col md:flex-row justify-between items-center gap-4 md:gap-8"
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"

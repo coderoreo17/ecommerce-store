@@ -58,11 +58,11 @@ export default function ShopPage() {
       <motion.section
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
-        className="bg-gradient-to-b from-gray-900 to-black py-12"
+        className="bg-gradient-to-b from-gray-900 to-black py-8 md:py-12"
       >
-        <div className="max-w-7xl mx-auto px-6">
+        <div className="max-w-7xl mx-auto px-4 md:px-6">
           <motion.h1
-            className="text-5xl font-bold text-white mb-4"
+            className="text-2xl md:text-3xl lg:text-5xl font-bold text-white mb-4"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2 }}
@@ -70,7 +70,7 @@ export default function ShopPage() {
             Our Shop
           </motion.h1>
           <motion.p
-            className="text-gray-400 text-lg"
+            className="text-gray-400 text-sm md:text-base lg:text-lg"
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.3 }}
@@ -81,8 +81,8 @@ export default function ShopPage() {
       </motion.section>
 
       {/* Shop Section */}
-      <section className="max-w-7xl mx-auto px-6 py-12">
-        <div className="flex gap-8">
+      <section className="max-w-7xl mx-auto px-4 md:px-6 py-8 md:py-12">
+        <div className="flex gap-4 md:gap-8 flex-col lg:flex-row">
           {/* Sidebar Filters */}
           <motion.aside
             className={`${showFilters ? "block" : "hidden"} lg:block w-full lg:w-64 flex-shrink-0`}
@@ -92,7 +92,7 @@ export default function ShopPage() {
           >
             <div className="card-glass">
               <div className="flex justify-between items-center mb-6">
-                <h2 className="text-xl font-bold text-white flex items-center gap-2">
+                <h2 className="text-lg md:text-xl font-bold text-white flex items-center gap-2">
                   <Filter size={20} />
                   Filters
                 </h2>
