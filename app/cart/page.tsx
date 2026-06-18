@@ -33,8 +33,8 @@ export default function CartPage() {
   ]);
 
   const updateQuantity = (id: number, delta: number) => {
-    setCartItems(
-      cartItems
+    setCartItems((prevItems) =>
+      prevItems
         .map((item) =>
           item.id === id
             ? {
