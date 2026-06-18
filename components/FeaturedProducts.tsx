@@ -1,6 +1,6 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { motion, Variants } from "framer-motion";
 import ProductCard from "./ProductCard";
 
 export default function FeaturedProducts() {
@@ -54,12 +54,14 @@ export default function FeaturedProducts() {
     },
   };
 
-  const titleVariants = {
+  const titleVariants: Variants = {
     hidden: { opacity: 0, x: -50 },
     visible: {
       opacity: 1,
       x: 0,
-      transition: { duration: 0.6, ease: "easeOut" },
+      transition: {
+        duration: 0.6,
+      },
     },
   };
 
@@ -84,7 +86,11 @@ export default function FeaturedProducts() {
           <motion.span
             className="bg-gradient-to-r from-blue-500 to-cyan-500 bg-clip-text text-transparent"
             animate={{ backgroundPosition: ["0%", "100%"] }}
-            transition={{ duration: 3, repeat: Infinity, repeatType: "reverse" }}
+            transition={{
+              duration: 3,
+              repeat: Infinity,
+              repeatType: "reverse",
+            }}
           >
             Products
           </motion.span>
@@ -131,7 +137,10 @@ export default function FeaturedProducts() {
         viewport={{ once: true }}
       >
         <motion.button
-          whileHover={{ scale: 1.05, boxShadow: "0 20px 40px rgba(59, 130, 246, 0.3)" }}
+          whileHover={{
+            scale: 1.05,
+            boxShadow: "0 20px 40px rgba(59, 130, 246, 0.3)",
+          }}
           whileTap={{ scale: 0.95 }}
           className="px-12 py-4 bg-gradient-to-r from-blue-600 to-blue-500 rounded-xl font-semibold text-white hover:shadow-lg transition-shadow"
         >
@@ -149,7 +158,6 @@ export default function FeaturedProducts() {
         transition={{
           duration: 15,
           repeat: Infinity,
-          ease: "easeInOut",
         }}
       />
     </section>
