@@ -1,15 +1,14 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { motion, Variants } from "framer-motion";
 
 export default function LoadingSpinner() {
-  const containerVariants = {
+  const containerVariants: Variants = {
     animate: {
       rotate: 360,
       transition: {
         duration: 2,
         repeat: Infinity,
-        ease: "linear",
       },
     },
   };
@@ -27,7 +26,11 @@ export default function LoadingSpinner() {
 
   return (
     <div className="flex items-center justify-center min-h-screen">
-      <motion.div className="relative w-20 h-20" variants={containerVariants} animate="animate">
+      <motion.div
+        className="relative w-20 h-20"
+        variants={containerVariants}
+        animate="animate"
+      >
         {[...Array(4)].map((_, i) => (
           <motion.div
             key={i}
@@ -38,7 +41,7 @@ export default function LoadingSpinner() {
             style={{
               left: "50%",
               top: "50%",
-              transform: `rotate(${(i * 90)}deg) translateX(40px)`,
+              transform: `rotate(${i * 90}deg) translateX(40px)`,
             }}
           />
         ))}
